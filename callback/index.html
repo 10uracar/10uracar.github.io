@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Spotify Yetkilendirme</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 24px;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #09090b;
+            color: #f5f5f7;
+        }
+
+        .card {
+            width: min(100%, 560px);
+
+            padding: 32px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.06),
+                    rgba(255, 255, 255, 0.018)
+                ),
+                rgba(255, 255, 255, 0.03);
+
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+
+            box-shadow:
+                0 24px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+
+            font-size: 24px;
+            font-weight: 650;
+            letter-spacing: -0.6px;
+        }
+
+        p {
+            margin: 0;
+
+            color: #92929a;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .status {
+            margin-top: 22px;
+
+            padding: 15px;
+
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            color: #cfcfd5;
+            font-size: 13px;
+            line-height: 1.6;
+
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .token-area {
+            margin-top: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+
+            padding: 14px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+
+            background: rgba(0, 0, 0, 0.25);
+            color: #f5f5f7;
+
+            font-family:
+                ui-monospace,
+                SFMono-Regular,
+                Menlo,
+                Consolas,
+                monospace;
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 14px;
+            padding: 13px 16px;
+
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 13px;
+
+            background: rgba(255, 255, 255, 0.05);
+            color: #f5f5f7;
+
+            font: inherit;
+            font-size: 13px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                transform 160ms ease,
+                background 160ms ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .warning {
+            margin-top: 12px;
+
+            color: #d9a65f;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <h1>Spotify Yetkilendirme</h1>
+
+        <p>
+            Spotify hesabından yalnızca
+            o anda çalan parçayı okumak için
+            yetki isteniyor.
+        </p>
+
+        <div
+            id="status"
+            class="status"
+        >
+            Hazırlanıyor...
+        </div>
+
+        <div
+            id="token-area"
+            class="token-area hidden"
+        >
+
+            <textarea
+                id="refresh-token"
+                readonly
+                aria-label="Spotify Refresh Token"
+            ></textarea>
+
+            <button
+                id="copy-token"
+                type="button"
+            >
+                Refresh Token'ı Kopyala
+            </button>
+
+            <p class="warning">
+                Bu token gizlidir.
+                GitHub'a normal dosya olarak yükleme
+                ve kimseyle paylaşma.
+                Bir sonraki adımda GitHub Secrets içine koyacağız.
+            </p>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        // ==================================================
+        // AYARLAR
+        // ==================================================
+
+        const CLIENT_ID =
+            "ce41766f21c3481f80925347ed604e47";
+
+        const REDIRECT_URI =
+            "https://onuracar.net/callback";
+
+        const SCOPES =
+            "user-read-currently-playing";
+
+
+        // ==================================================
+        // DOM
+        // ==================================================
+
+        const statusElement =
+            document.getElementById("status");
+
+        const tokenArea =
+            document.getElementById("token-area");
+
+        const refreshTokenElement =
+            document.getElementById("refresh-token");
+
+        const copyTokenButton =
+            document.getElementById("copy-token");
+
+
+        // ==================================================
+        // DURUM
+        // ==================================================
+
+        function setStatus(message) {
+
+            statusElement.textContent =
+                message;
+        }
+
+
+        // ==================================================
+        // RANDOM STRING
+        // ==================================================
+
+        function generateRandomString(length) {
+
+            const characters =
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                "abcdefghijklmnopqrstuvwxyz" +
+                "0123456789-._~";
+
+            const randomValues =
+                crypto.getRandomValues(
+                    new Uint8Array(length)
+                );
+
+            let result = "";
+
+            for (
+                let i = 0;
+                i < randomValues.length;
+                i++
+            ) {
+                result +=
+                    characters[
+                        randomValues[i] %
+                        characters.length
+                    ];
+            }
+
+            return result;
+        }
+
+
+        // ==================================================
+        // PKCE CODE CHALLENGE
+        // ==================================================
+
+        async function createCodeChallenge(
+            codeVerifier
+        ) {
+
+            const encoder =
+                new TextEncoder();
+
+            const data =
+                encoder.encode(codeVerifier);
+
+            const digest =
+                await crypto.subtle.digest(
+                    "SHA-256",
+                    data
+                );
+
+            const bytes =
+                new Uint8Array(digest);
+
+            let binary = "";
+
+            for (const byte of bytes) {
+                binary +=
+                    String.fromCharCode(byte);
+            }
+
+            return btoa(binary)
+                .replace(/\+/g, "-")
+                .replace(/\//g, "_")
+                .replace(/=+$/, "");
+        }
+
+
+        // ==================================================
+        // SPOTIFY AUTHORIZATION
+        // ==================================================
+
+        async function startAuthorization() {
+
+            if (
+                !CLIENT_ID ||
+                CLIENT_ID ===
+                    "BURAYA_CLIENT_ID_GELECEK"
+            ) {
+
+                throw new Error(
+                    "Client ID henüz eklenmemiş."
+                );
+            }
+
+
+            const codeVerifier =
+                generateRandomString(64);
+
+            const codeChallenge =
+                await createCodeChallenge(
+                    codeVerifier
+                );
+
+            const state =
+                generateRandomString(32);
+
+
+            sessionStorage.setItem(
+                "spotify_code_verifier",
+                codeVerifier
+            );
+
+            sessionStorage.setItem(
+                "spotify_state",
+                state
+            );
+
+
+            const params =
+                new URLSearchParams({
+
+                    response_type:
+                        "code",
+
+                    client_id:
+                        CLIENT_ID,
+
+                    scope:
+                        SCOPES,
+
+                    redirect_uri:
+                        REDIRECT_URI,
+
+                    state:
+                        state,
+
+                    code_challenge_method:
+                        "S256",
+
+                    code_challenge:
+                        codeChallenge,
+
+                    show_dialog:
+                        "true"
+
+                });
+
+
+            window.location.href =
+                "https://accounts.spotify.com/authorize?" +
+                params.toString();
+        }
+
+
+        // ==================================================
+        // CODE → TOKEN
+        // ==================================================
+
+        async function exchangeCodeForToken(
+            code
+        ) {
+
+            const codeVerifier =
+                sessionStorage.getItem(
+                    "spotify_code_verifier"
+                );
+
+
+            if (!codeVerifier) {
+
+                throw new Error(
+                    "PKCE code_verifier bulunamadı. " +
+                    "Yetkilendirmeyi baştan başlat."
+                );
+            }
+
+
+            const response =
+                await fetch(
+                    "https://accounts.spotify.com/api/token",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/x-www-form-urlencoded"
+                        },
+
+                        body:
+                            new URLSearchParams({
+
+                                client_id:
+                                    CLIENT_ID,
+
+                                grant_type:
+                                    "authorization_code",
+
+                                code:
+                                    code,
+
+                                redirect_uri:
+                                    REDIRECT_URI,
+
+                                code_verifier:
+                                    codeVerifier
+
+                            })
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.error_description ||
+                    data.error ||
+                    "Spotify token alınamadı."
+                );
+            }
+
+
+            return data;
+        }
+
+
+        // ==================================================
+        // CALLBACK
+        // ==================================================
+
+        async function handleCallback() {
+
+            const url =
+                new URL(
+                    window.location.href
+                );
+
+            const params =
+                url.searchParams;
+
+
+            const code =
+                params.get("code");
+
+            const returnedState =
+                params.get("state");
+
+            const error =
+                params.get("error");
+
+
+            // ----------------------------------------------
+            // Spotify kullanıcı isteğini reddettiyse
+            // ----------------------------------------------
+
+            if (error) {
+
+                setStatus(
+                    "Spotify yetkilendirmesi reddedildi.\n\n" +
+                    "Hata: " +
+                    error
+                );
+
+                return;
+            }
+
+
+            // ----------------------------------------------
+            // Henüz authorization code yoksa
+            // ----------------------------------------------
+
+            if (!code) {
+
+                setStatus(
+                    "Spotify'a yönlendiriliyorsun..."
+                );
+
+                await startAuthorization();
+
+                return;
+            }
+
+
+            // ----------------------------------------------
+            // STATE KONTROLÜ
+            // ----------------------------------------------
+
+            const savedState =
+                sessionStorage.getItem(
+                    "spotify_state"
+                );
+
+
+            if (
+                !savedState ||
+                !returnedState ||
+                returnedState !== savedState
+            ) {
+
+                throw new Error(
+                    "State doğrulaması başarısız oldu."
+                );
+            }
+
+
+            // ----------------------------------------------
+            // TOKEN AL
+            // ----------------------------------------------
+
+            setStatus(
+                "Spotify yetkilendirmesi başarılı.\n\n" +
+                "Refresh Token alınıyor..."
+            );
+
+
+            const tokenData =
+                await exchangeCodeForToken(
+                    code
+                );
+
+
+            if (
+                !tokenData.refresh_token
+            ) {
+
+                throw new Error(
+                    "Spotify Refresh Token göndermedi."
+                );
+            }
+
+
+            // ----------------------------------------------
+            // TOKEN'I GÖSTER
+            // ----------------------------------------------
+
+            refreshTokenElement.value =
+                tokenData.refresh_token;
+
+            tokenArea.classList.remove(
+                "hidden"
+            );
+
+
+            setStatus(
+                "Tamamdır.\n\n" +
+                "Refresh Token oluşturuldu."
+            );
+
+
+            // ----------------------------------------------
+            // URL TEMİZLE
+            // ----------------------------------------------
+
+            window.history.replaceState(
+                {},
+                document.title,
+                REDIRECT_URI
+            );
+
+
+            // ----------------------------------------------
+            // GEÇİCİ PKCE VERİLERİNİ TEMİZLE
+            // ----------------------------------------------
+
+            sessionStorage.removeItem(
+                "spotify_code_verifier"
+            );
+
+            sessionStorage.removeItem(
+                "spotify_state"
+            );
+        }
+
+
+        // ==================================================
+        // KOPYALA
+        // ==================================================
+
+        copyTokenButton.addEventListener(
+            "click",
+            async () => {
+
+                try {
+
+                    await navigator.clipboard.writeText(
+                        refreshTokenElement.value
+                    );
+
+                    copyTokenButton.textContent =
+                        "Kopyalandı ✓";
+
+                    setTimeout(() => {
+
+                        copyTokenButton.textContent =
+                            "Refresh Token'ı Kopyala";
+
+                    }, 1800);
+
+                } catch {
+
+                    refreshTokenElement.select();
+
+                    document.execCommand(
+                        "copy"
+                    );
+                }
+            }
+        );
+
+
+        // ==================================================
+        // BAŞLAT
+        // ==================================================
+
+        (async () => {
+
+            try {
+
+                await handleCallback();
+
+            } catch (error) {
+
+                console.error(error);
+
+                setStatus(
+                    "Bir hata oluştu:\n\n" +
+                    error.message
+                );
+            }
+
+        })();
+
+    </script>
+
+</body>
+</html>
