@@ -56,9 +56,16 @@ jobs:
 
           echo "Spotify response: ${HTTP_CODE}"
 
+          # Daha önce kaydedilmiş son şarkıyı koru.
+          if [ -f spotify.json ] && jq -e . spotify.json >/dev/null 2>&1; then
+            LAST_PLAYED=$(jq '.lastPlayed // null' spotify.json)
+          else
+            LAST_PLAYED="null"
+          fi
+
           if [ "$HTTP_CODE" = "204" ]; then
 
-            cat > spotify.json <<'EOF'
+            cat > spotify.json <<EOF
           {
             "isPlaying": false,
             "track": null,
@@ -68,37 +75,57 @@ jobs:
             "spotifyUrl": null,
             "progressMs": 0,
             "durationMs": 0,
-            "updatedAt": ""
+            "updatedAt": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "lastPlayed": $LAST_PLAYED
           }
           EOF
 
           elif [ "$HTTP_CODE" = "200" ]; then
 
-            TRACK_DATA=$(cat spotify-response.json)
+            jq \
+              --argjson previousLastPlayed "$LAST_PLAYED" \
+              '{
+                isPlaying: (.is_playing // false),
+                track: (.item.name // null),
+                artist: (
+                  if .item.artists then
+                    (.item.artists | map(.name) | join(", "))
+                  else
+                    null
+                  end
+                ),
+                album: (.item.album.name // null),
+                albumImage: (
+                  if .item.album.images and (.item.album.images | length) > 0
+                  then .item.album.images[0].url
+                  else null
+                  end
+                ),
+                spotifyUrl: (.item.external_urls.spotify // null),
+                progressMs: (.progress_ms // 0),
+                durationMs: (.item.duration_ms // 0),
+                updatedAt: (now | todateiso8601),
+                lastPlayed: {
+                  track: (.item.name // null),
+                  artist: (
+                    if .item.artists then
+                      (.item.artists | map(.name) | join(", "))
+                    else
+                      null
+                    end
+                  ),
+                  album: (.item.album.name // null),
+                  albumImage: (
+                    if .item.album.images and (.item.album.images | length) > 0
+                    then .item.album.images[0].url
+                    else null
+                    end
+                  ),
+                  spotifyUrl: (.item.external_urls.spotify // null)
+                }
+              }' spotify-response.json > spotify.json.tmp
 
-            jq '{
-              isPlaying: (.is_playing // false),
-              track: (.item.name // null),
-              artist: (
-                if .item.artists then
-                  (.item.artists | map(.name) | join(", "))
-                else
-                  null
-                end
-              ),
-              album: (.item.album.name // null),
-              albumImage: (
-                if .item.album.images and (.item.album.images | length) > 0
-                then .item.album.images[0].url
-                else null
-                end
-              ),
-              spotifyUrl: (.item.external_urls.spotify // null),
-              progressMs: (.progress_ms // 0),
-              durationMs: (.item.duration_ms // 0),
-              updatedAt: (now | todateiso8601)
-            }' \
-            <<< "$TRACK_DATA" > spotify.json
+            mv spotify.json.tmp spotify.json
 
           else
 
