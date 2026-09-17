@@ -1,18 +1,18 @@
 {
   "isPlaying": true,
-  "track": "Hoşçakal",
-  "artist": "emre aydın",
-  "album": "Kağıt Evler",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
-  "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx",
-  "progressMs": 208265,
-  "durationMs": 226360,
-  "updatedAt": "2026-09-17T01:22:26Z",
+  "track": "505",
+  "artist": "Arctic Monkeys",
+  "album": "Favourite Worst Nightmare",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273b1f8da74f225fa1225cdface",
+  "spotifyUrl": "https://open.spotify.com/track/0BxE4FqsDD1Ot4YuBXwAPp",
+  "progressMs": 71894,
+  "durationMs": 253586,
+  "updatedAt": "2026-09-17T02:52:52Z",
   "lastPlayed": {
-    "track": "Hoşçakal",
-    "artist": "emre aydın",
-    "album": "Kağıt Evler",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
-    "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx"
+    "track": "505",
+    "artist": "Arctic Monkeys",
+    "album": "Favourite Worst Nightmare",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273b1f8da74f225fa1225cdface",
+    "spotifyUrl": "https://open.spotify.com/track/0BxE4FqsDD1Ot4YuBXwAPp"
   }
 }
