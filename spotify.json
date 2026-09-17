@@ -1,18 +1,18 @@
 {
   "isPlaying": true,
-  "track": "Space Song",
-  "artist": "Beach House",
-  "album": "Depression Cherry",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b273d1430224d631eaa5954f13c9",
-  "spotifyUrl": "https://open.spotify.com/track/1ZgMsA55GIY7ICkQh5MILA",
-  "progressMs": 286326,
-  "durationMs": 320466,
-  "updatedAt": "2026-09-17T03:06:11Z",
+  "track": "Sen Bilmezsin",
+  "artist": "Dedublüman",
+  "album": "Sen Bilmezsin",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273b428d70d3d9e11a61101b10d",
+  "spotifyUrl": "https://open.spotify.com/track/5VykLQtjCYF6qFq59HbUg9",
+  "progressMs": 38368,
+  "durationMs": 173307,
+  "updatedAt": "2026-09-17T03:24:58Z",
   "lastPlayed": {
-    "track": "Space Song",
-    "artist": "Beach House",
-    "album": "Depression Cherry",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273d1430224d631eaa5954f13c9",
-    "spotifyUrl": "https://open.spotify.com/track/1ZgMsA55GIY7ICkQh5MILA"
+    "track": "Sen Bilmezsin",
+    "artist": "Dedublüman",
+    "album": "Sen Bilmezsin",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273b428d70d3d9e11a61101b10d",
+    "spotifyUrl": "https://open.spotify.com/track/5VykLQtjCYF6qFq59HbUg9"
   }
 }
