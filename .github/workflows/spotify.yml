@@ -60,7 +60,6 @@ jobs:
 
           echo "Spotify response: ${HTTP_CODE}"
 
-          # Daha önce kaydedilmiş son şarkıyı koru.
           if [ -f spotify.json ] && jq -e . spotify.json >/dev/null 2>&1; then
             LAST_PLAYED=$(jq '.lastPlayed // null' spotify.json)
           else
