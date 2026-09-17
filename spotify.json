@@ -1,18 +1,18 @@
 {
   "isPlaying": true,
-  "track": "505",
-  "artist": "Arctic Monkeys",
-  "album": "Favourite Worst Nightmare",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b273b1f8da74f225fa1225cdface",
-  "spotifyUrl": "https://open.spotify.com/track/0BxE4FqsDD1Ot4YuBXwAPp",
-  "progressMs": 71894,
-  "durationMs": 253586,
-  "updatedAt": "2026-09-17T02:52:52Z",
+  "track": "Space Song",
+  "artist": "Beach House",
+  "album": "Depression Cherry",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273d1430224d631eaa5954f13c9",
+  "spotifyUrl": "https://open.spotify.com/track/1ZgMsA55GIY7ICkQh5MILA",
+  "progressMs": 217240,
+  "durationMs": 320466,
+  "updatedAt": "2026-09-17T02:59:42Z",
   "lastPlayed": {
-    "track": "505",
-    "artist": "Arctic Monkeys",
-    "album": "Favourite Worst Nightmare",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273b1f8da74f225fa1225cdface",
-    "spotifyUrl": "https://open.spotify.com/track/0BxE4FqsDD1Ot4YuBXwAPp"
+    "track": "Space Song",
+    "artist": "Beach House",
+    "album": "Depression Cherry",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273d1430224d631eaa5954f13c9",
+    "spotifyUrl": "https://open.spotify.com/track/1ZgMsA55GIY7ICkQh5MILA"
   }
 }
