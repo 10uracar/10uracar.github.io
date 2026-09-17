@@ -1,11 +1,18 @@
 {
   "isPlaying": true,
-  "track": "Sakladığın Bir Şeyler Var",
-  "artist": "Dedublüman",
-  "album": "Sakladığın Bir Şeyler Var",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b2739b7b7dacc44acdcafb69a1a2",
-  "spotifyUrl": "https://open.spotify.com/track/6t18CcJVpnFAoWfcZxiZtk",
-  "progressMs": 20939,
-  "durationMs": 196800,
-  "updatedAt": "2026-09-17T01:08:28Z"
+  "track": "Hoşçakal",
+  "artist": "emre aydın",
+  "album": "Kağıt Evler",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
+  "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx",
+  "progressMs": 208265,
+  "durationMs": 226360,
+  "updatedAt": "2026-09-17T01:22:26Z",
+  "lastPlayed": {
+    "track": "Hoşçakal",
+    "artist": "emre aydın",
+    "album": "Kağıt Evler",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
+    "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx"
+  }
 }
