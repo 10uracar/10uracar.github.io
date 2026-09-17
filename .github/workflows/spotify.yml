@@ -6,6 +6,10 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: spotify-now-playing
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -150,4 +154,7 @@ jobs:
           fi
 
           git commit -m "Update Spotify now playing"
+
+          git pull --rebase origin main
+
           git push
