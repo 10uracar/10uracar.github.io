@@ -367,6 +367,253 @@ window.addEventListener("resize", () => {
 });
 
 
+
+// -----------------------------------------
+// Spotify Now Playing
+// -----------------------------------------
+
+const spotifyWidget = document.getElementById("spotify-widget");
+const spotifyToggle = document.getElementById("spotify-toggle");
+const spotifyPanel = document.getElementById("spotify-panel");
+const spotifyClose = document.getElementById("spotify-close");
+const spotifyEyebrow = document.getElementById("spotify-eyebrow");
+const spotifyTitle = document.getElementById("spotify-title");
+const spotifyArtist = document.getElementById("spotify-artist");
+const spotifyCover = document.getElementById("spotify-cover");
+const spotifyProgressBar = document.getElementById("spotify-progress-bar");
+const spotifyTime = document.getElementById("spotify-time");
+const spotifyLink = document.getElementById("spotify-link");
+const spotifyEmpty = document.getElementById("spotify-empty");
+
+let spotifyData = null;
+let spotifyProgressTimer = null;
+
+function setSpotifyPanel(open) {
+    spotifyWidget.classList.toggle("is-open", open);
+    spotifyPanel.setAttribute("aria-hidden", String(!open));
+    spotifyToggle.setAttribute("aria-expanded", String(open));
+}
+
+function formatDuration(ms) {
+    if (!Number.isFinite(ms) || ms < 0) {
+        return "—:—";
+    }
+
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
+    return `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function getEffectiveProgress(data) {
+    if (!data || !data.isPlaying) {
+        return Math.max(0, Number(data?.progressMs) || 0);
+    }
+
+    const baseProgress = Math.max(0, Number(data.progressMs) || 0);
+    const duration = Math.max(0, Number(data.durationMs) || 0);
+    const updatedAt = Date.parse(data.updatedAt || "");
+
+    if (!duration || !Number.isFinite(updatedAt)) {
+        return baseProgress;
+    }
+
+    const elapsed = Math.max(0, Date.now() - updatedAt);
+    return Math.min(duration, baseProgress + elapsed);
+}
+
+function renderSpotifyProgress() {
+    const data = spotifyData;
+
+    if (!data) {
+        spotifyProgressBar.style.width = "0%";
+        spotifyTime.textContent = "—:—";
+        return;
+    }
+
+    const duration = Math.max(0, Number(data.durationMs) || 0);
+    const progress = getEffectiveProgress(data);
+
+    if (!duration) {
+        spotifyProgressBar.style.width = "0%";
+        spotifyTime.textContent = "—:—";
+        return;
+    }
+
+    const percentage = Math.min(
+        100,
+        Math.max(0, (progress / duration) * 100)
+    );
+
+    spotifyProgressBar.style.width = `${percentage}%`;
+    spotifyTime.textContent =
+        `${formatDuration(progress)} / ${formatDuration(duration)}`;
+}
+
+function resetSpotifyArtwork() {
+    spotifyCover.removeAttribute("src");
+    spotifyCover.alt = "";
+    spotifyCover.classList.remove("has-image");
+}
+
+function renderSpotify(data) {
+    spotifyData = data;
+
+    const isPlaying =
+        data &&
+        data.isPlaying === true &&
+        data.track;
+
+    const lastPlayed =
+        data?.lastPlayed &&
+        data.lastPlayed.track
+            ? data.lastPlayed
+            : null;
+
+    const item =
+        isPlaying
+            ? {
+                track: data.track,
+                artist: data.artist,
+                albumImage: data.albumImage,
+                spotifyUrl: data.spotifyUrl
+            }
+            : lastPlayed;
+
+    if (!item) {
+        spotifyEyebrow.textContent = "Spotify";
+        spotifyTitle.textContent = "Henüz dinlenen bir parça yok";
+        spotifyArtist.textContent =
+            "Spotify'da bir şey dinlediğinde burada görünecek.";
+        spotifyLink.removeAttribute("href");
+        spotifyLink.setAttribute("aria-disabled", "true");
+        spotifyProgressBar.style.width = "0%";
+        spotifyTime.textContent = "—:—";
+        resetSpotifyArtwork();
+        spotifyEmpty.classList.add("is-hidden");
+        return;
+    }
+
+    spotifyEyebrow.textContent =
+        isPlaying
+            ? "Şimdi Çalıyor"
+            : "Son Dinlenen";
+
+    spotifyTitle.textContent =
+        item.track || "Bilinmeyen parça";
+
+    spotifyArtist.textContent =
+        item.artist || "Bilinmeyen sanatçı";
+
+    if (item.albumImage) {
+        spotifyCover.src = item.albumImage;
+        spotifyCover.alt =
+            `${item.track || "Albüm"} albüm kapağı`;
+        spotifyCover.classList.add("has-image");
+    } else {
+        resetSpotifyArtwork();
+    }
+
+    if (item.spotifyUrl) {
+        spotifyLink.href = item.spotifyUrl;
+        spotifyLink.removeAttribute("aria-disabled");
+    } else {
+        spotifyLink.removeAttribute("href");
+        spotifyLink.setAttribute("aria-disabled", "true");
+    }
+
+    spotifyEmpty.classList.add("is-hidden");
+
+    renderSpotifyProgress();
+}
+
+async function loadSpotifyData() {
+    try {
+        const response = await fetch(
+            `spotify.json?ts=${Date.now()}`,
+            {
+                cache: "no-store"
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Spotify data request failed: ${response.status}`
+            );
+        }
+
+        const data = await response.json();
+
+        renderSpotify(data);
+    } catch (error) {
+        console.error(
+            "Spotify verisi alınamadı:",
+            error
+        );
+
+        if (!spotifyData) {
+            spotifyEyebrow.textContent = "Spotify";
+            spotifyTitle.textContent =
+                "Veri alınamadı";
+            spotifyArtist.textContent =
+                "Biraz sonra tekrar deneyebilirsin.";
+        }
+    }
+}
+
+spotifyToggle.addEventListener("click", event => {
+    event.stopPropagation();
+
+    const isOpen =
+        spotifyWidget.classList.contains("is-open");
+
+    setSpotifyPanel(!isOpen);
+
+    if (!isOpen) {
+        loadSpotifyData();
+    }
+});
+
+spotifyClose.addEventListener("click", event => {
+    event.stopPropagation();
+    setSpotifyPanel(false);
+});
+
+spotifyPanel.addEventListener("click", event => {
+    event.stopPropagation();
+});
+
+document.addEventListener("click", event => {
+    if (
+        spotifyWidget.classList.contains("is-open") &&
+        !spotifyWidget.contains(event.target)
+    ) {
+        setSpotifyPanel(false);
+    }
+});
+
+document.addEventListener("keydown", event => {
+    if (
+        event.key === "Escape" &&
+        spotifyWidget.classList.contains("is-open")
+    ) {
+        setSpotifyPanel(false);
+    }
+});
+
+loadSpotifyData();
+
+setInterval(
+    loadSpotifyData,
+    30 * 1000
+);
+
+spotifyProgressTimer = setInterval(
+    renderSpotifyProgress,
+    1000
+);
+
 // -----------------------------------------
 // Reduced Motion
 // -----------------------------------------

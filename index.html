@@ -114,6 +114,119 @@
     </div>
 
 
+    <!-- ---------- Spotify Now Playing ---------- -->
+
+    <div
+        class="spotify-widget"
+        id="spotify-widget"
+    >
+        <button
+            class="spotify-toggle"
+            id="spotify-toggle"
+            type="button"
+            aria-label="Spotify'da son dinlediğimi göster"
+            aria-expanded="false"
+            aria-controls="spotify-panel"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M15 4v11.5"></path>
+                <path d="M15 4l5-1v4"></path>
+                <circle cx="11" cy="17" r="3"></circle>
+            </svg>
+        </button>
+
+        <div
+            class="spotify-panel"
+            id="spotify-panel"
+            aria-hidden="true"
+        >
+            <div class="spotify-panel-top">
+                <div>
+                    <p class="spotify-eyebrow" id="spotify-eyebrow">
+                        Son Dinlenen
+                    </p>
+                    <h2 id="spotify-title">
+                        Yükleniyor...
+                    </h2>
+                </div>
+
+                <button
+                    class="spotify-close"
+                    id="spotify-close"
+                    type="button"
+                    aria-label="Spotify panelini kapat"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M6 6l12 12"></path>
+                        <path d="M18 6L6 18"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="spotify-track">
+                <div class="spotify-cover-wrap">
+                    <img
+                        id="spotify-cover"
+                        class="spotify-cover"
+                        src=""
+                        alt=""
+                        draggable="false"
+                    >
+                </div>
+
+                <div class="spotify-track-info">
+                    <p id="spotify-artist">
+                        Spotify verisi alınıyor...
+                    </p>
+
+                    <div class="spotify-progress">
+                        <span
+                            id="spotify-progress-bar"
+                            class="spotify-progress-bar"
+                        ></span>
+                    </div>
+
+                    <div class="spotify-meta">
+                        <span id="spotify-time">—:—</span>
+
+                        <a
+                            id="spotify-link"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Spotify'da Aç
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <p
+                class="spotify-empty"
+                id="spotify-empty"
+            >
+                Henüz Spotify dinleme verisi alınamadı.
+            </p>
+        </div>
+    </div>
+
+
     <!-- ---------- Ana İçerik ---------- -->
 
     <main class="container">
