@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-09-17T08:45:23Z",
+  "lastPlayed": {
   "track": "Sen Bilmezsin",
   "artist": "Dedublüman",
   "album": "Sen Bilmezsin",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b273b428d70d3d9e11a61101b10d",
-  "spotifyUrl": "https://open.spotify.com/track/5VykLQtjCYF6qFq59HbUg9",
-  "progressMs": 38368,
-  "durationMs": 173307,
-  "updatedAt": "2026-09-17T03:24:58Z",
-  "lastPlayed": {
-    "track": "Sen Bilmezsin",
-    "artist": "Dedublüman",
-    "album": "Sen Bilmezsin",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273b428d70d3d9e11a61101b10d",
-    "spotifyUrl": "https://open.spotify.com/track/5VykLQtjCYF6qFq59HbUg9"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/5VykLQtjCYF6qFq59HbUg9"
+}
 }
