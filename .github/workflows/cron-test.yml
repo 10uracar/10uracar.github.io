@@ -9,4 +9,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "CRON ÇALIŞTI: $(date -u)"
+      - run: echo "CRON CALISTI $(date -u)"
