@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-09-19T23:18:12Z",
+  "lastPlayed": {
   "track": "Sen Orda Yoksun",
   "artist": "Göksel",
   "album": "Sen Orda Yoksun",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b2736054a3d4d3fadf0173dbdf07",
-  "spotifyUrl": "https://open.spotify.com/track/0xB1twgXnL1hEwLRWdRUIe",
-  "progressMs": 79229,
-  "durationMs": 241456,
-  "updatedAt": "2026-09-19T21:23:50Z",
-  "lastPlayed": {
-    "track": "Sen Orda Yoksun",
-    "artist": "Göksel",
-    "album": "Sen Orda Yoksun",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b2736054a3d4d3fadf0173dbdf07",
-    "spotifyUrl": "https://open.spotify.com/track/0xB1twgXnL1hEwLRWdRUIe"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/0xB1twgXnL1hEwLRWdRUIe"
+}
 }
