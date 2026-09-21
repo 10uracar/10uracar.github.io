@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-09-21T05:20:11Z",
+  "lastPlayed": {
   "track": "Yok Bana Bu Cihanda",
   "artist": "Maya Perest",
   "album": "Yok Bana Bu Cihanda",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b273e3b184a4f6ffe872395c06e2",
-  "spotifyUrl": "https://open.spotify.com/track/4DhyDAN1yx5WNYQEeWaCSd",
-  "progressMs": 28282,
-  "durationMs": 268765,
-  "updatedAt": "2026-09-21T00:27:57Z",
-  "lastPlayed": {
-    "track": "Yok Bana Bu Cihanda",
-    "artist": "Maya Perest",
-    "album": "Yok Bana Bu Cihanda",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273e3b184a4f6ffe872395c06e2",
-    "spotifyUrl": "https://open.spotify.com/track/4DhyDAN1yx5WNYQEeWaCSd"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/4DhyDAN1yx5WNYQEeWaCSd"
+}
 }
