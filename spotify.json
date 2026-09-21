@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-09-20T22:33:11Z",
+  "isPlaying": true,
+  "track": "Yok Bana Bu Cihanda",
+  "artist": "Maya Perest",
+  "album": "Yok Bana Bu Cihanda",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273e3b184a4f6ffe872395c06e2",
+  "spotifyUrl": "https://open.spotify.com/track/4DhyDAN1yx5WNYQEeWaCSd",
+  "progressMs": 28282,
+  "durationMs": 268765,
+  "updatedAt": "2026-09-21T00:27:57Z",
   "lastPlayed": {
-  "track": "Bir Gülü Sevdim",
-  "artist": "Ferdi Özbeğen",
-  "album": "Piyanist",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b2730969a72f38d13288e3f4834e",
-  "spotifyUrl": "https://open.spotify.com/track/0iOFXoyUG7c758lAIuBasa"
-}
+    "track": "Yok Bana Bu Cihanda",
+    "artist": "Maya Perest",
+    "album": "Yok Bana Bu Cihanda",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273e3b184a4f6ffe872395c06e2",
+    "spotifyUrl": "https://open.spotify.com/track/4DhyDAN1yx5WNYQEeWaCSd"
+  }
 }
