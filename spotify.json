@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-09-25T05:28:14Z",
+  "lastPlayed": {
   "track": "Hoşçakal",
   "artist": "emre aydın",
   "album": "Kağıt Evler",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
-  "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx",
-  "progressMs": 53849,
-  "durationMs": 226360,
-  "updatedAt": "2026-09-25T00:45:44Z",
-  "lastPlayed": {
-    "track": "Hoşçakal",
-    "artist": "emre aydın",
-    "album": "Kağıt Evler",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
-    "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx"
+}
 }
