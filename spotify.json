@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-09-28T21:51:12Z",
+  "isPlaying": true,
+  "track": "Nazende Sevgilim",
+  "artist": "Mine Geçili",
+  "album": "Mine'l Aşk",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b2732ad1e65ff3c62818a12899e3",
+  "spotifyUrl": "https://open.spotify.com/track/48pgXWxRz8vk5cIBE2cTc9",
+  "progressMs": 6334,
+  "durationMs": 193160,
+  "updatedAt": "2026-09-29T01:20:25Z",
   "lastPlayed": {
-  "track": "Hoşçakal",
-  "artist": "emre aydın",
-  "album": "Kağıt Evler",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b273e11bdacf6fd4f56df98cd2b6",
-  "spotifyUrl": "https://open.spotify.com/track/4NgBpiVDCdDvpiV92QIekx"
-}
+    "track": "Nazende Sevgilim",
+    "artist": "Mine Geçili",
+    "album": "Mine'l Aşk",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b2732ad1e65ff3c62818a12899e3",
+    "spotifyUrl": "https://open.spotify.com/track/48pgXWxRz8vk5cIBE2cTc9"
+  }
 }
