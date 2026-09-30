@@ -28,37 +28,137 @@
     </div>
   </div>
 
-  <main class="page">
-    <a class="home-button" href="../" aria-label="Ana menüye dön">
+  <main class="page results-page">
+    <a class="home-button" href="./" aria-label="Araştırmalara dön">
       <span aria-hidden="true">←</span>
-      <span>Ana menüye dön</span>
+      <span>Araştırmalara dön</span>
     </a>
 
-    <header class="hero compact">
-      <span class="eyebrow">ARAŞTIRMA SONUÇLARI · ONUR ACAR</span>
-      <h1>Üretken Yapay Zekâ ve Akademik Verimlilik</h1>
-      <p>Yalnızca toplu ve anonim istatistikler gösterilir. Bireysel yanıtlar yayımlanmaz.</p>
+    <header class="hero results-hero">
+      <div class="eyebrow-row">
+        <span class="eyebrow">ARAŞTIRMA SONUÇLARI · ONUR ACAR</span>
+        <span class="live-badge" id="source-status"><span class="status-dot"></span> CANLI VERİ</span>
+      </div>
+      <h1>Üretken Yapay Zekâ ve<br>Akademik Verimlilik</h1>
+      <p>Yalnızca toplu ve anonim istatistikler yayımlanır. Bireysel yanıtlar paylaşılmaz.</p>
     </header>
 
-    <section class="stats-grid" id="stats-grid" aria-label="Toplu araştırma istatistikleri">
-      <div class="stat-card"><span>Katılımcı</span><strong id="participants">—</strong></div>
-      <div class="stat-card"><span>Ortalama verimlilik</span><strong id="productivity">—</strong></div>
-      <div class="stat-card"><span>Zaman kazandığını düşünen</span><strong id="time-saving">—</strong></div>
-      <div class="stat-card"><span>Güncel veri</span><strong id="updated">—</strong></div>
+    <section class="stats-grid primary-stats" aria-label="Ana araştırma istatistikleri">
+      <div class="stat-card featured-stat">
+        <span>Katılımcı</span>
+        <strong id="participants">—</strong>
+        <small>Araştırmaya dahil edilen yanıt</small>
+      </div>
+      <div class="stat-card featured-stat">
+        <span>Ortalama verimlilik</span>
+        <strong id="productivity">—</strong>
+        <small>5 üzerinden</small>
+      </div>
+      <div class="stat-card featured-stat">
+        <span>Zaman kazancı algısı</span>
+        <strong id="time-saving">—</strong>
+        <small>4 veya 5 puan verenler</small>
+      </div>
+      <div class="stat-card">
+        <span>Son güncelleme</span>
+        <strong id="updated">—</strong>
+        <small>Google Sheets verisi</small>
+      </div>
     </section>
 
-    <section class="panel">
+    <section class="dashboard-grid">
+      <article class="panel wide-panel" id="profile-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">01 · KATILIMCI PROFİLİ</span>
+            <h2>Kimler katıldı?</h2>
+          </div>
+          <span class="panel-note">Dağılımlar</span>
+        </div>
+        <div class="privacy-notice" id="privacy-notice">Detaylı alt grup istatistikleri, küçük gruplarda kimlik çıkarımı riskini azaltmak için yeterli yanıt sayısına ulaşılana kadar gizlenir.</div>
+        <div class="distribution-grid" id="demographic-distributions"></div>
+      </article>
+
+      <article class="panel wide-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">02 · YAPAY ZEKÂ KULLANIMI</span>
+            <h2>Nasıl kullanılıyor?</h2>
+          </div>
+        </div>
+        <div class="insight-cards">
+          <div class="insight-card"><span>En sık kullanılan araç</span><strong id="top-tool">—</strong></div>
+          <div class="insight-card"><span>En yaygın kullanım sıklığı</span><strong id="top-frequency">—</strong></div>
+          <div class="insight-card"><span>Akademik kullanım payı</span><strong id="top-academic-share">—</strong></div>
+        </div>
+        <div class="distribution-grid" id="usage-distributions"></div>
+      </article>
+
+      <article class="panel wide-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">03 · ÇALIŞMA SÜRESİ</span>
+            <h2>Zaman üzerindeki algı</h2>
+          </div>
+        </div>
+        <div class="chart-list" id="time-chart"></div>
+      </article>
+
+      <article class="panel wide-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">04 · AKADEMİK VERİMLİLİK</span>
+            <h2>Katılımcıların değerlendirmesi</h2>
+          </div>
+        </div>
+        <div class="score-summary">
+          <div class="score-ring" id="score-ring"><span id="score-ring-value">—</span><small>/ 5</small></div>
+          <div>
+            <strong>Genel algılanan akademik verimlilik</strong>
+            <p>Katılımcıların 5'li Likert ölçeğindeki genel değerlendirmesi.</p>
+          </div>
+        </div>
+        <div class="chart-list" id="productivity-chart"></div>
+      </article>
+
+      <article class="panel wide-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">05 · KULLANIM AMAÇLARI</span>
+            <h2>Üretken yapay zekâ ne için kullanılıyor?</h2>
+          </div>
+        </div>
+        <div class="chart-list" id="purpose-chart"></div>
+      </article>
+
+      <article class="panel wide-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="eyebrow">06 · KULLANIM BİÇİMİ</span>
+            <h2>Öğrenciler AI'ı nasıl konumlandırıyor?</h2>
+          </div>
+        </div>
+        <div class="chart-list" id="style-chart"></div>
+        <p class="panel-footnote">Sonuçlar araştırmanın veri toplama dönemi boyunca güncellenir.</p>
+      </article>
+    </section>
+
+    <section class="panel methodology-panel">
       <div class="panel-heading">
         <div>
-          <span class="eyebrow">ÖZET</span>
-          <h2>Sonuçlar</h2>
+          <span class="eyebrow">ARAŞTIRMA NOTU</span>
+          <h2>Veriler nasıl okunmalı?</h2>
         </div>
-        <span class="live-badge" id="source-status">Bekleniyor</span>
       </div>
-      <p id="message">Google Sheets → Apps Script bağlantısı kurulduğunda bu alan otomatik güncellenecek.</p>
+      <p id="message">Google Sheets bağlantısından toplu veriler yükleniyor.</p>
+      <div class="methodology-grid">
+        <div><span>Veri kaynağı</span><strong>Google Forms → Google Sheets</strong></div>
+        <div><span>Gösterim</span><strong>Toplu istatistikler</strong></div>
+        <div><span>Bireysel yanıtlar</span><strong>Yayımlanmaz</strong></div>
+      </div>
     </section>
 
-    <footer>© 2026 Onur Acar</footer>
+    <footer>© 2026 Onur Acar · Akademik Araştırmalar</footer>
   </main>
 
   <script src="theme.js"></script>
