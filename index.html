@@ -17,8 +17,6 @@
 
     <link rel="stylesheet" href="style.css">
 
-<script defer src="https://cloud.umami.is/script.js" data-website-id="8d1eb90f-a151-4767-a942-f5a31077517a"></script>
-
 </head>
 
 <body>
@@ -111,119 +109,6 @@
             </button>
         </div>
 
-    </div>
-
-
-    <!-- ---------- Spotify Now Playing ---------- -->
-
-    <div
-        class="spotify-widget"
-        id="spotify-widget"
-    >
-        <button
-            class="spotify-toggle"
-            id="spotify-toggle"
-            type="button"
-            aria-label="Spotify'da son dinlediğimi göster"
-            aria-expanded="false"
-            aria-controls="spotify-panel"
-        >
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.9"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-            >
-                <path d="M15 4v11.5"></path>
-                <path d="M15 4l5-1v4"></path>
-                <circle cx="11" cy="17" r="3"></circle>
-            </svg>
-        </button>
-
-        <div
-            class="spotify-panel"
-            id="spotify-panel"
-            aria-hidden="true"
-        >
-            <div class="spotify-panel-top">
-                <div>
-                    <p class="spotify-eyebrow" id="spotify-eyebrow">
-                        Son Dinlenen
-                    </p>
-                    <h2 id="spotify-title">
-                        Yükleniyor...
-                    </h2>
-                </div>
-
-                <button
-                    class="spotify-close"
-                    id="spotify-close"
-                    type="button"
-                    aria-label="Spotify panelini kapat"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        aria-hidden="true"
-                    >
-                        <path d="M6 6l12 12"></path>
-                        <path d="M18 6L6 18"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="spotify-track">
-                <div class="spotify-cover-wrap">
-                    <img
-                        id="spotify-cover"
-                        class="spotify-cover"
-                        src=""
-                        alt=""
-                        draggable="false"
-                    >
-                </div>
-
-                <div class="spotify-track-info">
-                    <p id="spotify-artist">
-                        Spotify verisi alınıyor...
-                    </p>
-
-                    <div class="spotify-progress">
-                        <span
-                            id="spotify-progress-bar"
-                            class="spotify-progress-bar"
-                        ></span>
-                    </div>
-
-                    <div class="spotify-meta">
-                        <span id="spotify-time">—:—</span>
-
-                        <a
-                            id="spotify-link"
-                            href="#"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Spotify'da Aç
-                            <span aria-hidden="true">↗</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <p
-                class="spotify-empty"
-                id="spotify-empty"
-            >
-                Henüz Spotify dinleme verisi alınamadı.
-            </p>
-        </div>
     </div>
 
 
@@ -415,11 +300,78 @@
         </nav>
 
 
+        <!-- ---------- Anketler ---------- -->
+
+        <section class="research-card">
+
+            <div class="research-copy">
+
+                <div class="section-heading">
+
+                    <span class="section-icon" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+                            <path d="M9 3.8h6"></path>
+                            <path d="M8.5 9h7"></path>
+                            <path d="M8.5 13h7"></path>
+                            <path d="M8.5 17h4.5"></path>
+                        </svg>
+                    </span>
+
+                    <h2>Anketler</h2>
+
+                </div>
+
+                <p>
+                    Yürüttüğüm öğrenci araştırmalarına ve yayımlanan toplu sonuçlara buradan ulaşabilirsin.
+                </p>
+
+            </div>
+
+            <a
+                class="research-link"
+                href="/anket/"
+                aria-label="Anketler sayfasını aç"
+            >
+                <span>Anket'e Git</span>
+            </a>
+
+        </section>
+
+
         <!-- ---------- Hakkımda ---------- -->
 
         <section class="about-card">
 
-            <h2>Hakkımda</h2>
+            <div class="section-heading">
+
+                <span class="section-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M6 3.8h8.5L19 8.3V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.8a1 1 0 0 1 1-1Z"></path>
+                        <path d="M14 3.8V8h4.2"></path>
+                        <path d="M8.5 12h7"></path>
+                        <path d="M8.5 15.5h7"></path>
+                        <path d="M8.5 19h4.5"></path>
+                    </svg>
+                </span>
+
+                <h2>Hakkımda</h2>
+
+            </div>
 
             <p>
                 Karabük'te yaşıyorum. Kastamonu Üniversitesi'nde
