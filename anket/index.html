@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" as="image" href="assets/google-forms-icon.webp" fetchpriority="high">
+  <meta name="description" content="Onur Acar ve öğrencilerin yürüttüğü akademik araştırmalar, anketler ve yayımlanan toplu sonuçlar.">
+  <title>Araştırmalar | Onur Acar</title>
+  <link rel="stylesheet" href="anket.css">
+</head>
+<body class="color-galaxy">
+  <div class="utility-buttons" aria-label="Görünüm ayarları">
+    <button id="theme-toggle" type="button" aria-label="Temayı değiştir" title="Temayı değiştir">☾</button>
+
+    <button id="color-toggle" type="button" aria-label="Rengi özelleştir" aria-expanded="false" aria-controls="color-panel" title="Rengi özelleştir">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 16.5 16.5 4a2.12 2.12 0 0 1 3 3L7 19.5 4 20l.5-3.5Z"></path>
+        <path d="m13.5 7 3.5 3.5"></path>
+        <path d="M5 13H3"></path>
+        <path d="M7 7 5.5 5.5"></path>
+        <path d="M12 4V2"></path>
+      </svg>
+    </button>
+
+    <div id="color-panel" class="color-panel" aria-hidden="true">
+      <p class="color-panel-title">Renk</p>
+
+      <button class="color-option active" type="button" data-color="galaxy" aria-pressed="true">
+        <span class="color-swatch galaxy"></span><span>Galaxy</span>
+      </button>
+      <button class="color-option" type="button" data-color="gold" aria-pressed="false">
+        <span class="color-swatch gold"></span><span>Gold</span>
+      </button>
+      <button class="color-option" type="button" data-color="mint" aria-pressed="false">
+        <span class="color-swatch mint"></span><span>Mint</span>
+      </button>
+      <button class="color-option" type="button" data-color="sky" aria-pressed="false">
+        <span class="color-swatch sky"></span><span>Sky</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="page">
+    <a class="home-button" href="../" aria-label="Ana menüye dön">
+      <span aria-hidden="true">←</span>
+      <span>Ana menüye dön</span>
+    </a>
+
+    <header class="hero">
+      <h1>Akademik Araştırmalar</h1>
+      <p>Yürüttüğüm öğrenci araştırmalarına ve yayımlanan toplu sonuçlar burada mevcuttur.</p>
+    </header>
+
+    <section class="research-list" aria-label="Araştırmalar">
+      <article class="research-card">
+        <div class="card-top">
+          <div class="card-heading">
+            <span class="status"><span class="status-dot"></span> DEVAM EDİYOR</span>
+            <h2>Üretken Yapay Zekâ Kullanımı ve Akademik Verimlilik</h2>
+          </div>
+          <span class="card-number" aria-label="Araştırma 01">01</span>
+        </div>
+
+        <div class="author-line">
+          <span>Yürüten</span>
+          <strong>Onur Acar</strong>
+        </div>
+
+        <p class="summary">
+          Üniversite öğrencilerinin üretken yapay zekâ kullanımının akademik çalışma süresi
+          ve algılanan akademik verimlilik ile ilişkisini inceleyen araştırma.
+        </p>
+
+        <div class="actions">
+          <a class="primary" href="https://forms.gle/4nETSyzQoH3WBEiRA" target="_blank" rel="noopener noreferrer">
+            Ankete Katıl <span aria-hidden="true">↗</span>
+          </a>
+          <a class="secondary" href="sonuclar.html">Sonuçları Gör</a>
+        </div>
+
+        <div class="note-row">
+          <span class="forms-logo-wrap" aria-hidden="true">
+            <img
+              class="forms-logo image-reveal"
+              src="assets/google-forms-icon.webp"
+              alt=""
+              width="24"
+              height="24"
+              decoding="async"
+              fetchpriority="high"
+              draggable="false"
+            >
+          </span>
+          <p class="note">Anket Google Forms üzerinden açılır. Yayımlanan sonuçlar yalnızca toplu istatistiklerden oluşur.</p>
+        </div>
+      </article>
+
+      <!-- Yeni araştırmacı/anket eklemek için yukarıdaki article bloğunu çoğaltıp yalnızca başlık, yürüten ve bağlantıları değiştirmen yeterli. -->
+    </section>
+
+    <footer>© 2026 Onur Acar</footer>
+  </main>
+
+  <script src="theme.js"></script>
+</body>
+</html>

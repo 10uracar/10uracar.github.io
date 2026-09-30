@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Üretken Yapay Zekâ ve Akademik Verimlilik araştırmasının toplu sonuçları.">
+  <title>Araştırma Sonuçları | Onur Acar</title>
+  <link rel="stylesheet" href="anket.css">
+</head>
+<body class="color-galaxy">
+  <div class="utility-buttons" aria-label="Görünüm ayarları">
+    <button id="theme-toggle" type="button" aria-label="Temayı değiştir" title="Temayı değiştir">☾</button>
+    <button id="color-toggle" type="button" aria-label="Rengi özelleştir" aria-expanded="false" aria-controls="color-panel" title="Rengi özelleştir">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 16.5 16.5 4a2.12 2.12 0 0 1 3 3L7 19.5 4 20l.5-3.5Z"></path>
+        <path d="m13.5 7 3.5 3.5"></path>
+        <path d="M5 13H3"></path>
+        <path d="M7 7 5.5 5.5"></path>
+        <path d="M12 4V2"></path>
+      </svg>
+    </button>
+    <div id="color-panel" class="color-panel" aria-hidden="true">
+      <p class="color-panel-title">Renk</p>
+      <button class="color-option active" type="button" data-color="galaxy" aria-pressed="true"><span class="color-swatch galaxy"></span><span>Galaxy</span></button>
+      <button class="color-option" type="button" data-color="gold" aria-pressed="false"><span class="color-swatch gold"></span><span>Gold</span></button>
+      <button class="color-option" type="button" data-color="mint" aria-pressed="false"><span class="color-swatch mint"></span><span>Mint</span></button>
+      <button class="color-option" type="button" data-color="sky" aria-pressed="false"><span class="color-swatch sky"></span><span>Sky</span></button>
+    </div>
+  </div>
+
+  <main class="page">
+    <a class="home-button" href="../" aria-label="Ana menüye dön">
+      <span aria-hidden="true">←</span>
+      <span>Ana menüye dön</span>
+    </a>
+
+    <header class="hero compact">
+      <span class="eyebrow">ARAŞTIRMA SONUÇLARI · ONUR ACAR</span>
+      <h1>Üretken Yapay Zekâ ve Akademik Verimlilik</h1>
+      <p>Yalnızca toplu ve anonim istatistikler gösterilir. Bireysel yanıtlar yayımlanmaz.</p>
+    </header>
+
+    <section class="stats-grid" id="stats-grid" aria-label="Toplu araştırma istatistikleri">
+      <div class="stat-card"><span>Katılımcı</span><strong id="participants">—</strong></div>
+      <div class="stat-card"><span>Ortalama verimlilik</span><strong id="productivity">—</strong></div>
+      <div class="stat-card"><span>Zaman kazandığını düşünen</span><strong id="time-saving">—</strong></div>
+      <div class="stat-card"><span>Güncel veri</span><strong id="updated">—</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">ÖZET</span>
+          <h2>Sonuçlar</h2>
+        </div>
+        <span class="live-badge" id="source-status">Bekleniyor</span>
+      </div>
+      <p id="message">Google Sheets → Apps Script bağlantısı kurulduğunda bu alan otomatik güncellenecek.</p>
+    </section>
+
+    <footer>© 2026 Onur Acar</footer>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="config.js"></script>
+  <script src="sonuclar.js"></script>
+</body>
+</html>
