@@ -904,79 +904,6 @@ body.light-mode .contact-card {
 }
 
 
-/* ---------- Bilgi Kutuları ---------- */
-
-.tags {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 10px;
-
-    margin-top: 24px;
-}
-
-.info-item {
-    min-height: 72px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 12px 15px;
-
-    border: 1px solid var(--tag-border);
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.035),
-            rgba(255, 255, 255, 0.01)
-        ),
-        var(--tag-background);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
-
-    transition:
-        background 180ms ease,
-        border-color 180ms ease,
-        transform 180ms ease;
-}
-
-.info-item:hover {
-    background: var(--surface-hover);
-
-    border-color: var(--border);
-
-    transform: translateY(-1px);
-}
-
-.info-label {
-    margin-bottom: 5px;
-
-    color: var(--text-muted);
-
-    font-size: 11px;
-    font-weight: 500;
-
-    line-height: 1.3;
-}
-
-.info-item strong {
-    color: var(--text-secondary);
-
-    font-size: 13px;
-    font-weight: 550;
-
-    line-height: 1.4;
-}
-
-
 /* ---------- İletişim ---------- */
 
 .contact-copy {
@@ -1261,32 +1188,6 @@ body.lightbox-open {
         border-radius: 21px;
     }
 
-    .tags {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
-
-        margin-top: 20px;
-    }
-
-    .info-item {
-        min-height: 64px;
-
-        padding: 9px 11px;
-
-        border-radius: 14px;
-    }
-
-    .info-label {
-        margin-bottom: 3px;
-
-        font-size: 10px;
-    }
-
-    .info-item strong {
-        font-size: 11.5px;
-        line-height: 1.3;
-    }
-
     .contact-card {
         margin-top: 12px;
 
@@ -1383,6 +1284,17 @@ body.lightbox-open {
     .info-item {
         min-height: 58px;
         padding: 8px 9px;
+    }
+
+    .info-icon,
+    .info-icon svg,
+    .info-icon-logo img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .info-head {
+        gap: 5px;
     }
 
     .info-label {
