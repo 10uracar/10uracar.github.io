@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-10-02T06:33:21Z",
+  "isPlaying": true,
+  "track": "Umrumdışı",
+  "artist": "Mabel Matiz",
+  "album": "Umrumdışı",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
+  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB",
+  "progressMs": 103807,
+  "durationMs": 218251,
+  "updatedAt": "2026-10-02T13:06:54Z",
   "lastPlayed": {
-  "track": "Nazende Sevgilim",
-  "artist": "Mine Geçili",
-  "album": "Mine'l Aşk",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b2732ad1e65ff3c62818a12899e3",
-  "spotifyUrl": "https://open.spotify.com/track/48pgXWxRz8vk5cIBE2cTc9"
-}
+    "track": "Umrumdışı",
+    "artist": "Mabel Matiz",
+    "album": "Umrumdışı",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
+    "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
+  }
 }
