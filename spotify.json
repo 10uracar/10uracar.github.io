@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-10-02T18:22:58Z",
+  "lastPlayed": {
   "track": "Umrumdışı",
   "artist": "Mabel Matiz",
   "album": "Umrumdışı",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
-  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB",
-  "progressMs": 103807,
-  "durationMs": 218251,
-  "updatedAt": "2026-10-02T13:06:54Z",
-  "lastPlayed": {
-    "track": "Umrumdışı",
-    "artist": "Mabel Matiz",
-    "album": "Umrumdışı",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
-    "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
+}
 }
