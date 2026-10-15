@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-10-14T22:24:18Z",
+  "isPlaying": true,
+  "track": "Seviyorum Delicesine",
+  "artist": "Ferdi Özbeğen",
+  "album": "Seviyorum Delicesine (Orijinal Plak Kayıtları)",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b2732b2fc5cf66a5503287b195b8",
+  "spotifyUrl": "https://open.spotify.com/track/2LBHZpL3i8pxpraFwWypZH",
+  "progressMs": 36862,
+  "durationMs": 199159,
+  "updatedAt": "2026-10-15T00:42:57Z",
   "lastPlayed": {
-  "track": "Umrumdışı",
-  "artist": "Mabel Matiz",
-  "album": "Umrumdışı",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
-  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
-}
+    "track": "Seviyorum Delicesine",
+    "artist": "Ferdi Özbeğen",
+    "album": "Seviyorum Delicesine (Orijinal Plak Kayıtları)",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b2732b2fc5cf66a5503287b195b8",
+    "spotifyUrl": "https://open.spotify.com/track/2LBHZpL3i8pxpraFwWypZH"
+  }
 }
