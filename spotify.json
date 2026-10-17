@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-10-17T09:43:10Z",
+  "lastPlayed": {
   "track": "Med Cezir",
   "artist": "Ceza",
   "album": "Medcezir",
   "albumImage": "https://i.scdn.co/image/f9ce6868cab624cd14488a884f00100ddab05457",
-  "spotifyUrl": "https://open.spotify.com/track/4ktTv8OPQDbahR4opPanNq",
-  "progressMs": 31984,
-  "durationMs": 287733,
-  "updatedAt": "2026-10-17T05:44:02Z",
-  "lastPlayed": {
-    "track": "Med Cezir",
-    "artist": "Ceza",
-    "album": "Medcezir",
-    "albumImage": "https://i.scdn.co/image/f9ce6868cab624cd14488a884f00100ddab05457",
-    "spotifyUrl": "https://open.spotify.com/track/4ktTv8OPQDbahR4opPanNq"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/4ktTv8OPQDbahR4opPanNq"
+}
 }
