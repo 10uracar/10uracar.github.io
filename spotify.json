@@ -1,18 +1,18 @@
 {
   "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-10-17T09:43:10Z",
-  "lastPlayed": {
-  "track": "Med Cezir",
+  "track": "Yerli Plaka",
   "artist": "Ceza",
-  "album": "Medcezir",
-  "albumImage": "https://i.scdn.co/image/f9ce6868cab624cd14488a884f00100ddab05457",
-  "spotifyUrl": "https://open.spotify.com/track/4ktTv8OPQDbahR4opPanNq"
-}
+  "album": "Yerli Plaka",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b2734a7f13cd6d9d7d1ab9bfda35",
+  "spotifyUrl": "https://open.spotify.com/track/6qLGmqg7yfTVotHvxVClZ8",
+  "progressMs": 273208,
+  "durationMs": 274693,
+  "updatedAt": "2026-10-17T13:15:32Z",
+  "lastPlayed": {
+    "track": "Yerli Plaka",
+    "artist": "Ceza",
+    "album": "Yerli Plaka",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b2734a7f13cd6d9d7d1ab9bfda35",
+    "spotifyUrl": "https://open.spotify.com/track/6qLGmqg7yfTVotHvxVClZ8"
+  }
 }
