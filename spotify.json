@@ -1,18 +1,18 @@
 {
   "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-10-23T14:58:52Z",
+  "track": "Umrumdışı",
+  "artist": "Mabel Matiz",
+  "album": "Umrumdışı",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
+  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB",
+  "progressMs": 1842,
+  "durationMs": 218251,
+  "updatedAt": "2026-10-23T19:04:04Z",
   "lastPlayed": {
-  "track": "Yerli Plaka",
-  "artist": "Ceza",
-  "album": "Yerli Plaka",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b2734a7f13cd6d9d7d1ab9bfda35",
-  "spotifyUrl": "https://open.spotify.com/track/6qLGmqg7yfTVotHvxVClZ8"
-}
+    "track": "Umrumdışı",
+    "artist": "Mabel Matiz",
+    "album": "Umrumdışı",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
+    "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
+  }
 }
