@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
+  "isPlaying": true,
+  "track": "Yalnız Kuş",
+  "artist": "Göksel",
+  "album": "Bende Bi' Aşk Var",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273eb4534ca1227f529d3895fd1",
+  "spotifyUrl": "https://open.spotify.com/track/5LcMWqKzFGbotbg0QkbrWK",
   "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-10-25T16:36:16Z",
+  "durationMs": 241162,
+  "updatedAt": "2026-10-25T19:14:32Z",
   "lastPlayed": {
-  "track": "Umrumdışı",
-  "artist": "Mabel Matiz",
-  "album": "Umrumdışı",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b27381f6518631adcebba825a667",
-  "spotifyUrl": "https://open.spotify.com/track/14xSndBPmB5bsYmKbwkhnB"
-}
+    "track": "Yalnız Kuş",
+    "artist": "Göksel",
+    "album": "Bende Bi' Aşk Var",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273eb4534ca1227f529d3895fd1",
+    "spotifyUrl": "https://open.spotify.com/track/5LcMWqKzFGbotbg0QkbrWK"
+  }
 }
