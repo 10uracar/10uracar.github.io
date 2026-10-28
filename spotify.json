@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-10-28T20:28:53Z",
+  "lastPlayed": {
   "track": "Yok Yok Yalan Deme",
   "artist": "Ferdi Özbeğen",
   "album": "Bir Sır Gibi",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b273c0d235b72361786b64300283",
-  "spotifyUrl": "https://open.spotify.com/track/76k07GNJbJn8O4MgYyyNzh",
-  "progressMs": 117844,
-  "durationMs": 253093,
-  "updatedAt": "2026-10-28T15:28:04Z",
-  "lastPlayed": {
-    "track": "Yok Yok Yalan Deme",
-    "artist": "Ferdi Özbeğen",
-    "album": "Bir Sır Gibi",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273c0d235b72361786b64300283",
-    "spotifyUrl": "https://open.spotify.com/track/76k07GNJbJn8O4MgYyyNzh"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/76k07GNJbJn8O4MgYyyNzh"
+}
 }
