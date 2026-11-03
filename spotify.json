@@ -1,18 +1,18 @@
 {
-  "isPlaying": false,
-  "track": null,
-  "artist": null,
-  "album": null,
-  "albumImage": null,
-  "spotifyUrl": null,
-  "progressMs": 0,
-  "durationMs": 0,
-  "updatedAt": "2026-11-02T19:38:24Z",
+  "isPlaying": true,
+  "track": "Tutamıyorum Zamanı",
+  "artist": "Müslüm Gürses",
+  "album": "Sandık",
+  "albumImage": "https://i.scdn.co/image/ab67616d0000b273284ca8226f4d3679fe489177",
+  "spotifyUrl": "https://open.spotify.com/track/44LYmTNbX7qlwSHcCxWBP2",
+  "progressMs": 17542,
+  "durationMs": 267679,
+  "updatedAt": "2026-11-03T01:47:24Z",
   "lastPlayed": {
-  "track": "Yok Yok Yalan Deme",
-  "artist": "Ferdi Özbeğen",
-  "album": "Bir Sır Gibi",
-  "albumImage": "https://i.scdn.co/image/ab67616d0000b273c0d235b72361786b64300283",
-  "spotifyUrl": "https://open.spotify.com/track/76k07GNJbJn8O4MgYyyNzh"
-}
+    "track": "Tutamıyorum Zamanı",
+    "artist": "Müslüm Gürses",
+    "album": "Sandık",
+    "albumImage": "https://i.scdn.co/image/ab67616d0000b273284ca8226f4d3679fe489177",
+    "spotifyUrl": "https://open.spotify.com/track/44LYmTNbX7qlwSHcCxWBP2"
+  }
 }
