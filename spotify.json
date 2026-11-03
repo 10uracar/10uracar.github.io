@@ -1,18 +1,18 @@
 {
-  "isPlaying": true,
+  "isPlaying": false,
+  "track": null,
+  "artist": null,
+  "album": null,
+  "albumImage": null,
+  "spotifyUrl": null,
+  "progressMs": 0,
+  "durationMs": 0,
+  "updatedAt": "2026-11-03T08:39:53Z",
+  "lastPlayed": {
   "track": "Tutamıyorum Zamanı",
   "artist": "Müslüm Gürses",
   "album": "Sandık",
   "albumImage": "https://i.scdn.co/image/ab67616d0000b273284ca8226f4d3679fe489177",
-  "spotifyUrl": "https://open.spotify.com/track/44LYmTNbX7qlwSHcCxWBP2",
-  "progressMs": 17542,
-  "durationMs": 267679,
-  "updatedAt": "2026-11-03T01:47:24Z",
-  "lastPlayed": {
-    "track": "Tutamıyorum Zamanı",
-    "artist": "Müslüm Gürses",
-    "album": "Sandık",
-    "albumImage": "https://i.scdn.co/image/ab67616d0000b273284ca8226f4d3679fe489177",
-    "spotifyUrl": "https://open.spotify.com/track/44LYmTNbX7qlwSHcCxWBP2"
-  }
+  "spotifyUrl": "https://open.spotify.com/track/44LYmTNbX7qlwSHcCxWBP2"
+}
 }
